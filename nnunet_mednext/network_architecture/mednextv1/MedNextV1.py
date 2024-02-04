@@ -378,7 +378,7 @@ class MedNeXt(nn.Module):
         if self.do_ds:
             return [x, x_ds_1, x_ds_2, x_ds_3, x_ds_4]
         else: 
-            return x
+            return x.mean(4).mean(3).sum(dim=2)
 
 
 if __name__ == "__main__":
